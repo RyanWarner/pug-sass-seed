@@ -3,12 +3,16 @@ jade-sass-seed
 
 A seed for simple websites that don't use a framework and use minimal JavaScript.
 
+
+
 Local Setup
 -----------
 
 1. `npm install`
 2. `npm install -g gulp`
 3. `gulp`
+
+
 
 Stack
 -----
