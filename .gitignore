@@ -27,7 +27,7 @@ node_modules
 bower_components
 
 # build directory
-dist
+build
 
 
 #ignore WebStorm project files
