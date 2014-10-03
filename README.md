@@ -1,4 +1,4 @@
-jade-sass-seed
+jade-sass-seed ![Mineral](http://rywar.com/github-images/mineral.svg)
 ==============
 
 A seed for simple websites that don't use a framework and use minimal JavaScript.

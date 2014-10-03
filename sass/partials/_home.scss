@@ -1,0 +1,23 @@
+// Home
+
+body, html
+{
+	@include flex-center-all;
+	width: 100%;
+	height: 100%;
+}
+
+.jade-sass-seed
+{
+	display: flex;
+	font-size: 28px;
+	align-items: flex-end;
+}
+
+.mineral
+{
+	background-image: url( '../images/mineral.svg' );
+	width: 80px;
+	height: 100px;
+	margin-left: 20px;
+}

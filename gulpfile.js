@@ -14,6 +14,7 @@ var JADE_FILES = 'jade/**/*.jade';
 var SASS_FILES = 'sass/**/*.scss';
 var SCRIPT_FILES = 'scripts/**/*.js';
 var IMAGE_FILES = 'images/**/*.*';
+var FAVICON = 'favicon.png';
 
 var handleError = function ( err )
 {
@@ -62,7 +63,7 @@ gulp.task( 'sass', function(  )
 gulp.task( 'js', function(  )
 {
 	return gulp.src( SCRIPT_FILES )
-		.pipe( gulp.dest( OUTPUT_DIR ) )
+		.pipe( gulp.dest( OUTPUT_DIR + 'scripts' ) )
 		.pipe( connect.reload(  ) );
 } );
 
@@ -70,6 +71,13 @@ gulp.task( 'images', function(  )
 {
 	return gulp.src( IMAGE_FILES )
 		.pipe( gulp.dest( OUTPUT_DIR + '/images/' ) )
+		.pipe( connect.reload(  ) );
+} );
+
+gulp.task( 'favicon', function(  )
+{
+	return gulp.src( FAVICON )
+		.pipe( gulp.dest( OUTPUT_DIR ) )
 		.pipe( connect.reload(  ) );
 } );
 
@@ -103,6 +111,7 @@ gulp.task( 'default', function(  )
 			'sass', 
 			'js',
 			'images',
+			'favicon'
 		],
 		'watch',
 		'connect',
