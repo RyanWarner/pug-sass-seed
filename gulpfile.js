@@ -7,14 +7,21 @@ var open 		= require( 'gulp-open' );
 var clean 		= require( 'gulp-clean' );
 var prefix 		= require( 'gulp-autoprefixer' );
 var runSequence = require( 'run-sequence' );
+var scsslint 	= require('gulp-scss-lint');
 
-var OUTPUT_DIR = 'build/';
 
-var JADE_FILES = 'jade/**/*.jade';
-var SASS_FILES = 'sass/**/*.scss';
+
+// File locations.
+
+var OUTPUT_DIR 	= 'build/';
+
+var JADE_FILES 	= 'jade/**/*.jade';
+var SASS_FILES 	= 'sass/**/*.scss';
 var SCRIPT_FILES = 'scripts/**/*.js';
 var IMAGE_FILES = 'images/**/*.*';
-var FAVICON = 'favicon.png';
+var FAVICON 	= 'favicon.png';
+
+
 
 var handleError = function ( err )
 {
@@ -49,7 +56,14 @@ gulp.task( 'jade', function(  )
 		.pipe( connect.reload(  ) );
 } );
 
-gulp.task( 'sass', function(  )
+gulp.task( 'scss-lint', function(  )
+{
+	return gulp.src( SASS_FILES )
+    	.pipe( scsslint( { 'config': 'scss-linting-config.yml' } ) )
+    	.on( 'error', handleError );
+} );
+
+gulp.task( 'sass', [ 'scss-lint' ], function(  )
 {
 	return gulp.src( SASS_FILES )
 		.pipe( sass(  ) )

@@ -2,15 +2,16 @@
 
 ::selection
 {
-	background-color: #F9EC67;
+	background-color: #f9ec67;
 }
 
 ::placeholder
 {
-	color: #AEA9A9;
+	color: #aea9a9;
 }
 
-body, html
+body,
+html
 {
 	background-color: $white;
 
@@ -32,19 +33,21 @@ p
 
 a
 {
+	color: #0f6ad4;
+
 	&:hover
 	{
-
+		color: #5da8ff;
 	}
 
 	&:active
 	{
-
+		color: #0e62c2;
 	}
 
 	&:visited
 	{
-
+		color: #e79952;
 	}
 }
 
