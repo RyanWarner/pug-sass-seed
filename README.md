@@ -20,3 +20,12 @@ Stack
 - [Jade](http://jade-lang.com/) as HTML preprocessor.
 - [Sass](http://sass-lang.com/) as CSS preprocessor.
 - [Gulp](http://gulpjs.com/) as streaming build system.
+
+
+
+Todo
+----
+
+- Concatenation
+- .scss and .js linting
+- Try browsersync
