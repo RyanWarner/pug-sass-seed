@@ -27,5 +27,6 @@ Todo
 ----
 
 - Concatenation
-- .scss and .js linting
+- ~~.scss linting~~
+- .js linting
 - Try browsersync

@@ -7,7 +7,8 @@ var open 		= require( 'gulp-open' );
 var clean 		= require( 'gulp-clean' );
 var prefix 		= require( 'gulp-autoprefixer' );
 var runSequence = require( 'run-sequence' );
-var scsslint 	= require('gulp-scss-lint');
+var scsslint 	= require( 'gulp-scss-lint' );
+var csscomb 	= require( 'gulp-csscomb' );
 
 
 
@@ -56,7 +57,18 @@ gulp.task( 'jade', function(  )
 		.pipe( connect.reload(  ) );
 } );
 
-gulp.task( 'scss-lint', function(  )
+
+
+// Styles.
+
+gulp.task( 'csscomb', function (  )
+{
+    return gulp.src( SASS_FILES )
+        .pipe( csscomb(  ) )
+        .pipe( gulp.dest( 'sass' ) );
+} );
+
+gulp.task( 'scss-lint', [ 'csscomb' ], function(  )
 {
 	return gulp.src( SASS_FILES )
     	.pipe( scsslint( { 'config': 'scss-linting-config.yml' } ) )

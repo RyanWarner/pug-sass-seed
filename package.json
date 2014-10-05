@@ -11,6 +11,7 @@
     "gulp-autoprefixer": "~1.0.1",
     "gulp-plumber": "~0.6.6",
     "gulp-run-sequence": "~0.3.2",
-    "gulp-scss-lint": "~0.1.4"
+    "gulp-scss-lint": "~0.1.4",
+    "gulp-csscomb": "~3.0.2"
   }
 }
