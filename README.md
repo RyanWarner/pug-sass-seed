@@ -1,7 +1,7 @@
 jade-sass-seed ![Mineral](http://rywar.com/github-images/mineral.svg)
 ==============
 
-A seed for simple websites that don't use a framework and use minimal JavaScript.
+Opinionated seed for simple websites that don't use a framework and use minimal JavaScript.
 
 
 
@@ -20,6 +20,14 @@ Stack
 - [Jade](http://jade-lang.com/) as HTML preprocessor.
 - [Sass](http://sass-lang.com/) as CSS preprocessor.
 - [Gulp](http://gulpjs.com/) as streaming build system.
+
+
+
+Sass Coding Style
+-----------------
+
+Todo: link to coding style documentation
+
 
 
 

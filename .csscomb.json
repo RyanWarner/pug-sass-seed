@@ -21,8 +21,7 @@
     "space-before-closing-brace": "\n",
     "strip-spaces": true,
     "vendor-prefix-align": true,
-	"custom_sort_order": true,
-	"sort_order": 
+	"sort-order": 
 	[
 		[
 			"content",
