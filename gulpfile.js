@@ -58,14 +58,11 @@ gulp.task( 'clean', function(  )
 
 gulp.task( 'jade', function(  )
 {
-	return
-	{
-		gulp.src( JADE_FILES )
+	return gulp.src( JADE_FILES )
 		.pipe( jade(  ) )
 		.on( 'error', handleError )
 		.pipe( gulp.dest( OUTPUT_DIR ) )
 		.pipe( connect.reload(  ) );
-	};
 } );
 
 
@@ -74,35 +71,27 @@ gulp.task( 'jade', function(  )
 
 gulp.task( 'csscomb', function (  )
 {
-    return
-    {	gulp.src( SASS_FILES )
+    return gulp.src( SASS_FILES )
         .pipe( csscomb(  ) )
         .pipe( gulp.dest( 'sass' ) );
-    };
 } );
 
 gulp.task( 'scss-lint', [ 'csscomb' ], function(  )
 {
-	return
-	{
-		gulp.src( SASS_FILES )
+	return gulp.src( SASS_FILES )
     	.pipe( scsslint( { 'config': 'scss-linting-config.yml' } ) )
     	.on( 'error', handleError );
-    };
 } );
 
 gulp.task( 'sass', [ 'scss-lint' ], function(  )
 {
-	return
-	{
-		gulp.src( SASS_FILES )
+	return gulp.src( SASS_FILES )
 		.pipe( sass(  ) )
 		.on( 'error', handleError )
 		.pipe( prefix( "last 2 versions", { cascade: true } ) )
 		.on( 'error', handleError )
 		.pipe( gulp.dest( OUTPUT_DIR + 'css' ) )
 		.pipe( connect.reload(  ) );
-	};
 } );
 
 
@@ -111,22 +100,16 @@ gulp.task( 'sass', [ 'scss-lint' ], function(  )
 
 gulp.task( 'eslint', function(  )
 {
-    return
-    {
-    	gulp.src( SCRIPT_FILES )
+    return gulp.src( SCRIPT_FILES )
         .pipe( eslint(  ) )
         .pipe( eslint.format(  ) );
-    };
 } );
 
 gulp.task( 'js', [ 'eslint' ], function(  )
 {
-	return
-	{
-		gulp.src( SCRIPT_FILES )
+	return gulp.src( SCRIPT_FILES )
 		.pipe( gulp.dest( OUTPUT_DIR + 'scripts' ) )
 		.pipe( connect.reload(  ) );
-	};
 } );
 
 
@@ -135,22 +118,16 @@ gulp.task( 'js', [ 'eslint' ], function(  )
 
 gulp.task( 'images', function(  )
 {
-	return
-	{
-		gulp.src( IMAGE_FILES )
+	return gulp.src( IMAGE_FILES )
 		.pipe( gulp.dest( OUTPUT_DIR + '/images/' ) )
 		.pipe( connect.reload(  ) );
-	};
 } );
 
 gulp.task( 'favicon', function(  )
 {
-	return
-	{
-		gulp.src( FAVICON )
+	return gulp.src( FAVICON )
 		.pipe( gulp.dest( OUTPUT_DIR ) )
 		.pipe( connect.reload(  ) );
-	};
 } );
 
 
@@ -174,11 +151,8 @@ gulp.task( 'open', function(  )
 		//app: "safari"
 	};
 
-	return
-	{
-		gulp.src( OUTPUT_DIR + "index.html" )
+	return gulp.src( OUTPUT_DIR + "index.html" )
 		.pipe( open( "http://localhost:8080", options ) );
-	};
 } );
 
 
