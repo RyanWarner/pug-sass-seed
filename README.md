@@ -3,6 +3,8 @@ jade-sass-seed ![Mineral](http://rywar.com/github-images/mineral.svg)
 
 Opinionated seed for simple websites that don't use a framework and use minimal JavaScript.
 
+Work in progress!
+
 
 
 Local Setup
@@ -23,7 +25,7 @@ Stack
 
 
 
-Sass Coding Style
+Coding Style
 -----------------
 
 Todo: Document and link to my coding style.
@@ -34,7 +36,8 @@ Todo: Document and link to my coding style.
 Todo
 ----
 
-- Concatenation
+- Document and link to my coding style.
+- Concatenation / minification
 - ~~.scss linting~~
-- .js linting
+- ~~.js linting~~
 - Try browsersync
