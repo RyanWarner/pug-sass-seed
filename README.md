@@ -26,7 +26,7 @@ Stack
 Sass Coding Style
 -----------------
 
-Todo: link to coding style documentation
+Todo: Document and link to my coding style.
 
 
 

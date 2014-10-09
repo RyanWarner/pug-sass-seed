@@ -9,8 +9,7 @@ var prefix 		= require( 'gulp-autoprefixer' );
 var runSequence = require( 'run-sequence' );
 var scsslint 	= require( 'gulp-scss-lint' );
 var csscomb 	= require( 'gulp-csscomb' );
-
-
+var eslint      = require( 'gulp-eslint' );
 
 // File locations.
 
@@ -86,7 +85,18 @@ gulp.task( 'sass', [ 'scss-lint' ], function(  )
 		.pipe( connect.reload(  ) );
 } );
 
-gulp.task( 'js', function(  )
+
+
+// Scripts
+
+gulp.task( 'eslint', function(  )
+{
+    return gulp.src( SCRIPT_FILES )
+        .pipe( eslint(  ) )
+        .pipe( eslint.format(  ) );
+} );
+
+gulp.task( 'js', [ 'eslint' ], function(  )
 {
 	return gulp.src( SCRIPT_FILES )
 		.pipe( gulp.dest( OUTPUT_DIR + 'scripts' ) )
