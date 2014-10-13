@@ -42,14 +42,11 @@ gulp.task( 'watch', function(  )
 
 gulp.task( 'clean', function(  )
 {
-	return
-	{
-		gulp.src( OUTPUT_DIR,
+	return gulp.src( OUTPUT_DIR,
 		{
 			read: false
 		} )
 		.pipe( clean(  ) );
-	};
 } );
 
 
