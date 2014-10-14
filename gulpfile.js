@@ -16,10 +16,10 @@ var eslint      = require( 'gulp-eslint' );
 
 // File locations.
 
-var OUTPUT_DIR 	 = 'build/';
+var OUTPUT_DIR   = 'build/';
 
-var JADE_FILES 	 = 'jade/**/*.jade';
-var SASS_FILES 	 = 'sass/**/*.scss';
+var JADE_FILES   = 'jade/**/*.jade';
+var SASS_FILES   = 'sass/**/*.scss';
 var SCRIPT_FILES = 'scripts/**/*.js';
 var IMAGE_FILES  = 'images/**/*.*';
 var FAVICON      = 'favicon.png';
