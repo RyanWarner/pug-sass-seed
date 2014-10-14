@@ -1,14 +1,15 @@
-var gulp 		= require( 'gulp' );
-var jade 		= require( 'gulp-jade' );
-var sass 		= require( 'gulp-sass' );
-var connect 	= require( 'gulp-connect' );
-var gutil 		= require( 'gulp-util' );
-var open 		= require( 'gulp-open' );
-var clean 		= require( 'gulp-clean' );
-var prefix 		= require( 'gulp-autoprefixer' );
+var gulp        = require( 'gulp' );
+var jade        = require( 'gulp-jade' );
+var sass        = require( 'gulp-sass' );
+var connect     = require( 'gulp-connect' );
+var gutil       = require( 'gulp-util' );
+var open        = require( 'gulp-open' );
+var clean       = require( 'gulp-clean' );
+var prefix      = require( 'gulp-autoprefixer' );
 var runSequence = require( 'run-sequence' );
-var scsslint 	= require( 'gulp-scss-lint' );
-var csscomb 	= require( 'gulp-csscomb' );
+
+var scsslint    = require( 'gulp-scss-lint' );
+var csscomb     = require( 'gulp-csscomb' );
 var eslint      = require( 'gulp-eslint' );
 
 
@@ -68,16 +69,17 @@ gulp.task( 'jade', function(  )
 
 gulp.task( 'csscomb', function (  )
 {
-    return gulp.src( SASS_FILES )
-        .pipe( csscomb(  ) )
-        .pipe( gulp.dest( 'sass' ) );
+	return gulp.src( SASS_FILES )
+		.pipe( csscomb(  ) )
+		.on( 'error', handleError );
+		.pipe( gulp.dest( 'sass' ) );
 } );
 
 gulp.task( 'scss-lint', [ 'csscomb' ], function(  )
 {
 	return gulp.src( SASS_FILES )
-    	.pipe( scsslint( { 'config': 'scss-linting-config.yml' } ) )
-    	.on( 'error', handleError );
+		.pipe( scsslint( { 'config': 'scss-linting-config.yml' } ) )
+		.on( 'error', handleError );
 } );
 
 gulp.task( 'sass', [ 'scss-lint' ], function(  )
@@ -85,7 +87,7 @@ gulp.task( 'sass', [ 'scss-lint' ], function(  )
 	return gulp.src( SASS_FILES )
 		.pipe( sass(  ) )
 		.on( 'error', handleError )
-		.pipe( prefix( "last 2 versions", { cascade: true } ) )
+		.pipe( prefix( 'last 2 versions', { cascade: true } ) )
 		.on( 'error', handleError )
 		.pipe( gulp.dest( OUTPUT_DIR + 'css' ) )
 		.pipe( connect.reload(  ) );
@@ -97,9 +99,9 @@ gulp.task( 'sass', [ 'scss-lint' ], function(  )
 
 gulp.task( 'eslint', function(  )
 {
-    return gulp.src( SCRIPT_FILES )
-        .pipe( eslint(  ) )
-        .pipe( eslint.format(  ) );
+	return gulp.src( SCRIPT_FILES )
+		.pipe( eslint(  ) )
+		.pipe( eslint.format(  ) );
 } );
 
 gulp.task( 'js', [ 'eslint' ], function(  )
@@ -144,12 +146,12 @@ gulp.task( 'open', function(  )
 {
 	var options = 
 	{
-		app: "google chrome"
-		//app: "safari"
+		app: 'google chrome'
+		//app: 'safari'
 	};
 
-	return gulp.src( OUTPUT_DIR + "index.html" )
-		.pipe( open( "http://localhost:8080", options ) );
+	return gulp.src( OUTPUT_DIR + 'index.html' )
+		.pipe( open( 'http://localhost:8080', options ) );
 } );
 
 
