@@ -1,5 +1,4 @@
-jade-sass-seed ![Mineral](http://rywar.com/github-images/mineral.svg)
-==============
+# jade-sass-seed ![Mineral](http://rywar.com/github-images/mineral.svg)
 
 Opinionated seed for simple websites that don't use a framework and use minimal JavaScript.
 
@@ -7,8 +6,7 @@ Work in progress!
 
 
 
-Local Setup
------------
+## Local Setup
 
 1. `npm install`
 2. `npm install -g gulp`
@@ -16,8 +14,7 @@ Local Setup
 
 
 
-Stack
------
+## Stack
 
 - [Jade](http://jade-lang.com/) as HTML preprocessor.
 - [Sass](http://sass-lang.com/) as CSS preprocessor.
@@ -25,10 +22,9 @@ Stack
 
 
 
-Coding Style
------------------
+## Coding Style
 
-Todo: Document and link to my coding style.
+[squint-style](https://github.com/RyanWarner/squint-style)
 
 
 
@@ -36,7 +32,7 @@ Todo: Document and link to my coding style.
 Todo
 ----
 
-- Document and link to my coding style.
+- ~~Document and link to my coding style.~~
 - Concatenation / minification
 - ~~.scss linting~~
 - ~~.js linting~~

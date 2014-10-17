@@ -26,12 +26,18 @@ var FAVICON      = 'favicon.png';
 
 
 
+// Error handler. 
+// Look for errors after every action the could possibly produce one.
+
 var handleError = function ( err )
 {
 	console.log( 'Error: ' +  err );
 	gutil.beep(  );
 	this.emit( 'end' );
 };
+
+
+
 
 gulp.task( 'watch', function(  )
 {
@@ -52,7 +58,7 @@ gulp.task( 'clean', function(  )
 
 
 
-// Jade
+// Jade.
 
 gulp.task( 'jade', function(  )
 {
@@ -71,7 +77,7 @@ gulp.task( 'csscomb', function (  )
 {
 	return gulp.src( SASS_FILES )
 		.pipe( csscomb(  ) )
-		.on( 'error', handleError );
+		.on( 'error', handleError )
 		.pipe( gulp.dest( 'sass' ) );
 } );
 
