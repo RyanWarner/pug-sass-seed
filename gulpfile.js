@@ -1,12 +1,14 @@
 var gulp        = require( 'gulp' );
-var jade        = require( 'gulp-jade' );
-var sass        = require( 'gulp-sass' );
-var connect     = require( 'gulp-connect' );
 var gutil       = require( 'gulp-util' );
 var open        = require( 'gulp-open' );
 var clean       = require( 'gulp-clean' );
-var prefix      = require( 'gulp-autoprefixer' );
+var connect     = require( 'gulp-connect' );
 var runSequence = require( 'run-sequence' );
+
+var jade        = require( 'gulp-jade' );
+
+var sass        = require( 'gulp-sass' );
+var prefix      = require( 'gulp-autoprefixer' );
 
 var scsslint    = require( 'gulp-scss-lint' );
 var csscomb     = require( 'gulp-csscomb' );
@@ -27,7 +29,7 @@ var FAVICON      = 'favicon.png';
 
 
 // Error handler. 
-// Look for errors after every action the could possibly produce one.
+// Look for errors after every action that could possibly produce one.
 
 var handleError = function ( err )
 {
@@ -101,7 +103,7 @@ gulp.task( 'sass', [ 'scss-lint' ], function(  )
 
 
 
-// Scripts
+// Scripts.
 
 gulp.task( 'eslint', function(  )
 {
@@ -119,7 +121,7 @@ gulp.task( 'js', [ 'eslint' ], function(  )
 
 
 
-// Assets
+// Assets.
 
 gulp.task( 'images', function(  )
 {
