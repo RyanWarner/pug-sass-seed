@@ -2,6 +2,7 @@ var gulp        = require( 'gulp' );
 var gutil       = require( 'gulp-util' );
 var open        = require( 'gulp-open' );
 var clean       = require( 'gulp-clean' );
+var flatten     = require( 'gulp-flatten' );
 var connect     = require( 'gulp-connect' );
 var runSequence = require( 'run-sequence' );
 
@@ -20,11 +21,12 @@ var eslint      = require( 'gulp-eslint' );
 
 var OUTPUT_DIR   = 'build/';
 
-var JADE_FILES   = __dirname + '/site/**/*.jade';
-var SASS_FILES   = __dirname + '/site/**/*.scss';
-var SCRIPT_FILES = 'scripts/**/*.js';
-var IMAGE_FILES  = 'images/**/*.*';
-var FAVICON      = 'favicon.png';
+var ALL_JADE_FILES   = __dirname + '/site/**/*.jade';
+var JADE_FILES       = __dirname + '/site/pages/**/*.jade';
+var SASS_FILES       = __dirname + '/site/**/*.scss';
+var SCRIPT_FILES     = 'scripts/**/*.js';
+var IMAGE_FILES      = 'images/**/*.*';
+var FAVICON          = 'favicon.png';
 
 
 
@@ -43,7 +45,7 @@ var handleError = function ( err )
 
 gulp.task( 'watch', function(  )
 {
-	gulp.watch( JADE_FILES, [ 'jade' ] );
+	gulp.watch( ALL_JADE_FILES, [ 'jade' ] );
 	gulp.watch( SASS_FILES, [ 'sass' ] );
 	gulp.watch( SCRIPT_FILES, [ 'js' ] );
 	gulp.watch( IMAGE_FILES, [ 'images' ] );
@@ -67,6 +69,7 @@ gulp.task( 'jade', function(  )
 	return gulp.src( JADE_FILES )
 		.pipe( jade(  ) )
 		.on( 'error', handleError )
+		.pipe( flatten(  ) )
 		.pipe( gulp.dest( OUTPUT_DIR ) )
 		.pipe( connect.reload(  ) );
 } );
