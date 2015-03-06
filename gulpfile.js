@@ -20,8 +20,8 @@ var eslint      = require( 'gulp-eslint' );
 
 var OUTPUT_DIR   = 'build/';
 
-var JADE_FILES   = 'jade/**/*.jade';
-var SASS_FILES   = 'sass/**/*.scss';
+var JADE_FILES   = __dirname + '/site/**/*.jade';
+var SASS_FILES   = __dirname + '/site/**/*.scss';
 var SCRIPT_FILES = 'scripts/**/*.js';
 var IMAGE_FILES  = 'images/**/*.*';
 var FAVICON      = 'favicon.png';

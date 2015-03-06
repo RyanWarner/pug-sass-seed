@@ -1,0 +1,57 @@
+// Global styles.
+
+::selection
+{
+	background-color: #f9ec67;
+}
+
+::placeholder
+{
+	color: #aea9a9;
+}
+
+body,
+html
+{
+	background-color: $white;
+
+	color: $black;
+	font-family: $helvetica;
+}
+
+h1
+{
+	font-size: 22px;
+	line-height: 32px;
+}
+
+p
+{
+	font-size: 16px;
+	line-height: 24px;
+}
+
+a
+{
+	color: #0f6ad4;
+
+	&:hover
+	{
+		color: #5da8ff;
+	}
+
+	&:active
+	{
+		color: #0e62c2;
+	}
+
+	&:visited
+	{
+		color: #e79952;
+	}
+}
+
+input
+{
+	box-sizing: border-box;
+}
