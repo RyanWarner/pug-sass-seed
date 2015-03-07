@@ -4,6 +4,7 @@ var open        = require( 'gulp-open' );
 var clean       = require( 'gulp-clean' );
 var flatten     = require( 'gulp-flatten' );
 var connect     = require( 'gulp-connect' );
+var cache       = require( 'gulp-cached' );
 var runSequence = require( 'run-sequence' );
 
 var jade        = require( 'gulp-jade' );
@@ -81,6 +82,7 @@ gulp.task( 'jade', function(  )
 gulp.task( 'csscomb', function (  )
 {
 	return gulp.src( SASS_FILES )
+		.pipe( cache( 'csscomb' ) )
 		.pipe( csscomb(  ) )
 		.on( 'error', handleError )
 		.pipe( gulp.dest( 'sass' ) );

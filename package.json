@@ -13,7 +13,8 @@
     "gulp-run-sequence": "~0.3.2",
     "gulp-scss-lint": "~0.1.4",
     "gulp-csscomb": "~3.0.2",
-    "gulp-flatten": "0.0.4"
+    "gulp-flatten": "0.0.4",
+    "gulp-cached": "~1.0.2"
   },
   "dependencies": {
     "gulp-eslint": "~0.1.8",
