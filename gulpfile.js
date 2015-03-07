@@ -2,7 +2,9 @@ var gulp        = require( 'gulp' );
 var gutil       = require( 'gulp-util' );
 var open        = require( 'gulp-open' );
 var clean       = require( 'gulp-clean' );
+var flatten     = require( 'gulp-flatten' );
 var connect     = require( 'gulp-connect' );
+var cache       = require( 'gulp-cached' );
 var runSequence = require( 'run-sequence' );
 
 var jade        = require( 'gulp-jade' );
@@ -10,9 +12,23 @@ var jade        = require( 'gulp-jade' );
 var sass        = require( 'gulp-sass' );
 var prefix      = require( 'gulp-autoprefixer' );
 
+
+// Linting plugins.
+
 var scsslint    = require( 'gulp-scss-lint' );
 var csscomb     = require( 'gulp-csscomb' );
 var eslint      = require( 'gulp-eslint' );
+
+
+
+//Build plugins
+
+var concat      = require( 'gulp-concat' );
+var uglify      = require( 'gulp-uglify' );
+var minifyHTML  = require( 'gulp-minify-html' );
+var minifyCSS   = require( 'gulp-minify-css' );
+var imagemin    = require( 'gulp-imagemin' );
+var pngquant    = require( 'imagemin-pngquant' );
 
 
 
@@ -20,11 +36,14 @@ var eslint      = require( 'gulp-eslint' );
 
 var OUTPUT_DIR   = 'build/';
 
-var JADE_FILES   = 'jade/**/*.jade';
-var SASS_FILES   = 'sass/**/*.scss';
-var SCRIPT_FILES = 'scripts/**/*.js';
-var IMAGE_FILES  = 'images/**/*.*';
-var FAVICON      = 'favicon.png';
+var MAIN_JS_FILENAME  = 'script.js';
+
+var ALL_JADE_FILES   = __dirname + '/site/**/*.jade';
+var JADE_FILES       = __dirname + '/site/pages/**/*.jade';
+var SASS_FILES       = __dirname + '/site/**/*.scss';
+var SCRIPT_FILES     = 'scripts/**/*.js';
+var IMAGE_FILES      = 'images/**/*.*';
+var FAVICON          = 'favicon.png';
 
 
 
@@ -43,7 +62,7 @@ var handleError = function ( err )
 
 gulp.task( 'watch', function(  )
 {
-	gulp.watch( JADE_FILES, [ 'jade' ] );
+	gulp.watch( ALL_JADE_FILES, [ 'jade' ] );
 	gulp.watch( SASS_FILES, [ 'sass' ] );
 	gulp.watch( SCRIPT_FILES, [ 'js' ] );
 	gulp.watch( IMAGE_FILES, [ 'images' ] );
@@ -67,6 +86,7 @@ gulp.task( 'jade', function(  )
 	return gulp.src( JADE_FILES )
 		.pipe( jade(  ) )
 		.on( 'error', handleError )
+		.pipe( flatten(  ) )
 		.pipe( gulp.dest( OUTPUT_DIR ) )
 		.pipe( connect.reload(  ) );
 } );
@@ -78,9 +98,10 @@ gulp.task( 'jade', function(  )
 gulp.task( 'csscomb', function (  )
 {
 	return gulp.src( SASS_FILES )
+		.pipe( cache( 'csscomb' ) )
 		.pipe( csscomb(  ) )
 		.on( 'error', handleError )
-		.pipe( gulp.dest( 'sass' ) );
+		.pipe( gulp.dest( './site' ) );
 } );
 
 gulp.task( 'scss-lint', [ 'csscomb' ], function(  )
@@ -93,6 +114,7 @@ gulp.task( 'scss-lint', [ 'csscomb' ], function(  )
 gulp.task( 'sass', [ 'scss-lint' ], function(  )
 {
 	return gulp.src( SASS_FILES )
+		.pipe( cache( 'sass' ) )
 		.pipe( sass(  ) )
 		.on( 'error', handleError )
 		.pipe( prefix( 'last 2 versions', { cascade: true } ) )
@@ -164,6 +186,68 @@ gulp.task( 'open', function(  )
 
 
 
+// ---------------+
+// Build tasks.   |
+// ---------------+
+
+gulp.task( 'build-scripts', function(  )
+{
+	return gulp.src( SCRIPT_FILES )
+		.pipe( concat( MAIN_JS_FILENAME ) )
+		.pipe( uglify(  ) )
+		.pipe( gulp.dest( OUTPUT_DIR + 'scripts' ) );
+} );
+
+gulp.task( 'build-html', function(  )
+{
+	return gulp.src( OUTPUT_DIR + '/**/*.html' )
+		.pipe( minifyHTML(  ) )
+		.pipe( gulp.dest( OUTPUT_DIR ) );
+} );
+
+gulp.task( 'build-css', function(  )
+{
+	return gulp.src( './site/main.scss' )
+		.pipe( sass(  ) )
+		.on( 'error', handleError )
+		.pipe( prefix( 'last 2 versions', { cascade: true } ) )
+		.on( 'error', handleError )
+		.pipe( minifyCSS(  ) )
+		.pipe( gulp.dest ( OUTPUT_DIR + 'css' ) );
+} );
+
+gulp.task( 'build-images', [ 'favicon' ], function (  )
+{
+	return gulp.src( IMAGE_FILES )
+		.pipe( imagemin(
+		{
+			progressive: true,
+			svgoPlugins: [ { removeViewBox: false } ],
+			use: [ pngquant(  ) ]
+		} ) )
+		.pipe( gulp.dest( OUTPUT_DIR + 'images' ) );
+} );
+
+gulp.task( 'build', function(  )
+{
+	runSequence(
+		'clean',
+		[
+			'build-images',
+			'build-scripts',
+			'build-css'
+		],
+		'jade',
+		'build-html',
+		'connect'
+	);
+} );
+
+
+
+// ----------------+
+// Default task.   |
+// ----------------+
 
 gulp.task( 'default', function(  )
 {

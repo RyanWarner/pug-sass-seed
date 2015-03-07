@@ -2,16 +2,18 @@
 
 *
 {
-	position: relative;
-	display: flex;
 	flex-flow: column;
 	flex-shrink: 0;
+
+	display: flex;
 	overflow: hidden;
 	box-sizing: border-box;
+	position: relative;
 }
 
 script,
-style
+style,
+title
 {
 	display: none;
 }
@@ -19,15 +21,16 @@ style
 html,
 body
 {
-	padding: 0;
 	margin: 0;
+	padding: 0;
 }
 
 ul
 {
-	list-style-type: none;
-	padding: 0;
 	margin: 0;
+	padding: 0;
+
+	list-style-type: none;
 }
 
 h1,
@@ -37,6 +40,7 @@ h4,
 h5
 {
 	margin: 0;
+
 	font-weight: normal;
 }
 
