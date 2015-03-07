@@ -4,16 +4,17 @@ body,
 html
 {
 	@extend %flex-center-all;
+
 	width: 100%;
 	height: 100%;
 }
 
 .jade-sass-seed
 {
-	font-size: 28px;
-
 	flex-direction: row;
 	align-items: flex-end;
+
+	font-size: 28px;
 }
 
 .mineral
