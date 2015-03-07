@@ -9,6 +9,7 @@ Work in progress!
 ## Local Setup
 
 1. `npm install`
+1. `gem install scss-lint`
 2. `npm install -g gulp`
 3. `gulp`
 
