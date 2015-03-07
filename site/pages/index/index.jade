@@ -1,13 +1,15 @@
+include ../../common-components/head/head.jade
+
 doctype html
 html
-	head
-		meta( name='viewport', content='width=device-width' initial-scale='1' )
-		title Title
-		link( rel='stylesheet', href='css/main.css' )
-		link( rel='icon', type='image/png', href='favicon.png' )
-		script( src='scripts/script.js' )
+	+head( 'jade-sass-seed' )
 	body
 		.jade-sass-seed
 			div 
 				| jade-sass-seed
 			.mineral
+		nav
+			a.nav-item( href='/index.html' )
+				| jade-sass-seed
+			a.nav-item( href='/page-one.html' )
+				| page-one
