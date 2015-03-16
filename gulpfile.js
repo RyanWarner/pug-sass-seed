@@ -116,7 +116,7 @@ gulp.task( 'scss-lint', function(  )
 gulp.task( 'sass', [ 'scss-lint' ], function(  )
 {
 	return gulp.src( __dirname + '/site/main.scss' )
-		// .pipe( cache( 'sass' ) )
+		//.pipe( cache( 'sass' ) )
 		.pipe( sass(  ) )
 		.on( 'error', handleError )
 		.pipe( prefix( 'last 2 versions', { cascade: true } ) )
@@ -263,7 +263,6 @@ gulp.task( 'default', function(  )
 			'favicon'
 		],
 		'watch',
-		'connect',
-		'open'
+		'connect'
 	);
 } );
