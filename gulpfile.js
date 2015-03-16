@@ -106,7 +106,7 @@ gulp.task( 'csscomb', function (  )
 		.pipe( gulp.dest( './site' ) );
 } );
 
-gulp.task( 'scss-lint', [ 'csscomb' ], function(  )
+gulp.task( 'scss-lint', function(  )
 {
 	return gulp.src( SASS_FILES )
 		.pipe( scsslint( { 'config': 'scss-linting-config.yml' } ) )
@@ -116,8 +116,8 @@ gulp.task( 'scss-lint', [ 'csscomb' ], function(  )
 gulp.task( 'sass', [ 'scss-lint' ], function(  )
 {
 	return gulp.src( SASS_FILES )
-		.pipe( cache( 'sass' ) )
-		//.pipe( sass(  ) )
+		// .pipe( cache( 'sass' ) )
+		.pipe( sass(  ) )
 		.on( 'error', handleError )
 		.pipe( prefix( 'last 2 versions', { cascade: true } ) )
 		.on( 'error', handleError )
