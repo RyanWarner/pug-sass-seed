@@ -50,7 +50,7 @@
     	"space-in-brackets": [2, "always"],
     	"space-in-parens": [2, "always"],
     	"space-infix-ops": 2,
-    	"space-unary-word-ops": 2,
+    	"space-word-ops": 1,
 
     	"no-undef": 0,
     	"block-scoped-var": 0
