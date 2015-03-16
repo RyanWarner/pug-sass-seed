@@ -70,6 +70,8 @@ gulp.task( 'watch', function(  )
 
 gulp.task( 'clean', function(  )
 {
+	cache.caches = {  };
+
 	return gulp.src( OUTPUT_DIR,
 		{
 			read: false
@@ -115,7 +117,7 @@ gulp.task( 'sass', [ 'scss-lint' ], function(  )
 {
 	return gulp.src( SASS_FILES )
 		.pipe( cache( 'sass' ) )
-		.pipe( sass(  ) )
+		//.pipe( sass(  ) )
 		.on( 'error', handleError )
 		.pipe( prefix( 'last 2 versions', { cascade: true } ) )
 		.on( 'error', handleError )
