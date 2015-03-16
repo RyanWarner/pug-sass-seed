@@ -115,13 +115,13 @@ gulp.task( 'scss-lint', function(  )
 
 gulp.task( 'sass', [ 'scss-lint' ], function(  )
 {
-	return gulp.src( SASS_FILES )
+	return gulp.src( __dirname + '/site/main.scss' )
 		// .pipe( cache( 'sass' ) )
 		.pipe( sass(  ) )
 		.on( 'error', handleError )
 		.pipe( prefix( 'last 2 versions', { cascade: true } ) )
 		.on( 'error', handleError )
-		.pipe( gulp.dest( OUTPUT_DIR + 'css' ) )
+		.pipe( gulp.dest( OUTPUT_DIR ) )
 		.pipe( connect.reload(  ) );
 } );
 
