@@ -1,4 +1,10 @@
 {
+  "name": "jade-sass-seed",
+  "author": "Ryan Warner",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RyanWarner/jade-sass-seed"
+  },
   "devDependencies": {
     "gulp": "~3.8.11",
     "gulp-jade": "~1.0.0",
