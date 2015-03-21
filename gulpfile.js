@@ -1,7 +1,7 @@
 var gulp        = require( 'gulp' );
 var gutil       = require( 'gulp-util' );
 var open        = require( 'gulp-open' );
-var clean       = require( 'gulp-clean' );
+var del         = require( 'del' );
 var flatten     = require( 'gulp-flatten' );
 var connect     = require( 'gulp-connect' );
 var cache       = require( 'gulp-cached' );
@@ -72,11 +72,7 @@ gulp.task( 'clean', function(  )
 {
 	cache.caches = {  };
 
-	return gulp.src( OUTPUT_DIR,
-		{
-			read: false
-		} )
-		.pipe( clean(  ) );
+	del( OUTPUT_DIR + '**' );
 } );
 
 
@@ -147,14 +143,14 @@ gulp.task( 'js', [ 'eslint' ], function(  )
 
 // Assets.
 
-gulp.task( 'images', function(  )
+gulp.task( 'images', [ 'clean' ], function(  )
 {
 	return gulp.src( IMAGE_FILES )
 		.pipe( gulp.dest( OUTPUT_DIR + '/images/' ) )
 		.pipe( connect.reload(  ) );
 } );
 
-gulp.task( 'favicon', function(  )
+gulp.task( 'favicon', [ 'clean' ], function(  )
 {
 	return gulp.src( FAVICON )
 		.pipe( gulp.dest( OUTPUT_DIR ) )
