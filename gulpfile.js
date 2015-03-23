@@ -72,7 +72,7 @@ gulp.task( 'clean', function(  )
 {
 	cache.caches = {  };
 
-	del( OUTPUT_DIR + '**' );
+	del.sync( 'build' );
 } );
 
 
@@ -143,14 +143,14 @@ gulp.task( 'js', [ 'eslint' ], function(  )
 
 // Assets.
 
-gulp.task( 'images', [ 'clean' ], function(  )
+gulp.task( 'images', function(  )
 {
 	return gulp.src( IMAGE_FILES )
 		.pipe( gulp.dest( OUTPUT_DIR + '/images/' ) )
 		.pipe( connect.reload(  ) );
 } );
 
-gulp.task( 'favicon', [ 'clean' ], function(  )
+gulp.task( 'favicon', function(  )
 {
 	return gulp.src( FAVICON )
 		.pipe( gulp.dest( OUTPUT_DIR ) )
@@ -250,8 +250,8 @@ gulp.task( 'build', function(  )
 gulp.task( 'default', function(  )
 {
 	runSequence(
-		'clean', 
-		[ 
+		'clean',
+		[
 			'jade', 
 			'sass', 
 			'js',
