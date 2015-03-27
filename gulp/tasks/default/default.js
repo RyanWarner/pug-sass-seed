@@ -15,11 +15,11 @@ gulp.task( 'default', function(  )
 	runSequence(
 		'clean',
 		[
-			// 'jade', 
+			'jade', 
 			'sass'
-			// 'scripts',
-			// 'images',
-			// 'favicon'
+			'scripts',
+			'images',
+			'favicon'
 		]
 		// 'watch',
 		// 'connect'
