@@ -16,12 +16,13 @@ gulp.task( 'default', function(  )
 		'clean',
 		[
 			'jade', 
-			'sass'
+			'sass',
 			'scripts',
 			'images',
 			'favicon'
-		]
-		// 'watch',
-		// 'connect'
+		],
+		'watch',
+		'connect',
+		'open'
 	);
 } );

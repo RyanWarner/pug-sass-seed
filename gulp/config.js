@@ -2,7 +2,7 @@
 
 module.exports =
 {
-	destination: __dirname + 'build/',
+	destination: __dirname + '/build/',
 	jade:
 	{
 		all: __dirname + '/site/**/*.jade',
