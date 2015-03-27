@@ -1,17 +1,26 @@
 // File globs.
 
+var path = require( 'path' );
+
+var pathToThisFile = __dirname;
+var root = path.dirname( pathToThisFile );
+
 module.exports =
 {
-	destination: __dirname + '/build/',
+	destination: root + '/build/',
 	jade:
 	{
-		all: __dirname + '/site/**/*.jade',
-		pages: __dirname + '/site/**/*.jade'
+		all: root + '/site/**/*.jade',
+		pages: root + '/site/**/*.jade'
 	},
-	sass: __dirname + '/site/**/*.scss',
-	scripts: __dirname + 'scripts/**/*.js',
-	images: __dirname + 'images/**/*.*',
-	favicon: __dirname + 'favicon.png',
+	sass:
+	{
+		all: root + '/site/**/*.scss',
+		main: root + '/site/main.scss'
+	},
+	scripts: root + '/scripts/**/*.js',
+	images: root + '/images/**/*.*',
+	favicon: root + '/favicon.png',
 	errorHandler: function(  )
 	{
 		console.log( 'Error: ' +  err );
