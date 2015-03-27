@@ -1,5 +1,9 @@
 var gulp        = require( 'gulp' );
 var runSequence = require( 'run-sequence' );
+var requireDir  = require( 'require-dir' );
+
+requireDir( '../base' );
+requireDir( './tasks' );
 
 
 // ----------------+
@@ -11,13 +15,13 @@ gulp.task( 'default', function(  )
 	runSequence(
 		'clean',
 		[
-			'jade', 
-			'sass', 
-			'scripts',
-			'images',
-			'favicon'
-		],
-		'watch',
-		'connect'
+			// 'jade', 
+			'sass'
+			// 'scripts',
+			// 'images',
+			// 'favicon'
+		]
+		// 'watch',
+		// 'connect'
 	);
 } );

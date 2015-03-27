@@ -11,5 +11,11 @@ module.exports =
 	sass: __dirname + '/site/**/*.scss',
 	scripts: __dirname + 'scripts/**/*.js',
 	images: __dirname + 'images/**/*.*',
-	favicon: __dirname + 'favicon.png'
+	favicon: __dirname + 'favicon.png',
+	errorHandler: function(  )
+	{
+		console.log( 'Error: ' +  err );
+		gutil.beep(  );
+		this.emit( 'end' );
+	}
 };
