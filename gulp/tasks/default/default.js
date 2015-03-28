@@ -22,7 +22,6 @@ gulp.task( 'default', function(  )
 			'favicon'
 		],
 		'watch',
-		'connect',
-		'open'
+		'connect'
 	);
 } );

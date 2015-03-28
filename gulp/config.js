@@ -5,9 +5,11 @@ var path = require( 'path' );
 var pathToThisFile = __dirname;
 var root = path.dirname( pathToThisFile );
 
+var destination = root + '/build/';
+
 module.exports =
 {
-	destination: root + '/build/',
+	destination: destination,
 	jade:
 	{
 		all: root + '/site/**/*.jade',
@@ -16,10 +18,20 @@ module.exports =
 	sass:
 	{
 		all: root + '/site/**/*.scss',
-		main: root + '/site/main.scss'
+		main: root + '/site/main.scss',
+		destination: destination + 'css'
 	},
-	scripts: root + '/scripts/**/*.js',
-	images: root + '/images/**/*.*',
+	scripts:
+	{
+		all: root + '/site/scripts/**/*.js',
+		main: root + '/site/scripts/main.js',
+		destination: destination + 'scripts'
+	},
+	images:
+	{
+		all: root + '/images/**/*.*',
+		destination: destination + 'images/'
+	},
 	favicon: root + '/favicon.png',
 	errorHandler: function(  )
 	{

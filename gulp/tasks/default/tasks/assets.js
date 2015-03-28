@@ -10,8 +10,8 @@ var connect   = require( 'gulp-connect' );
 
 gulp.task( 'images', function(  )
 {
-	return gulp.src( config.images )
-		.pipe( gulp.dest( config.destination + '/images/' ) )
+	return gulp.src( config.images.all )
+		.pipe( gulp.dest( config.images.destination ) )
 		.pipe( connect.reload(  ) );
 } );
 
