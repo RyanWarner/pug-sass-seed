@@ -3,7 +3,6 @@ var gutil   = require( 'gulp-util' );
 
 var flatten = require( 'gulp-flatten' );
 var connect = require( 'gulp-connect' );
-var cache   = require( 'gulp-cached' );
 
 var jade    = require( 'gulp-jade' );
 
