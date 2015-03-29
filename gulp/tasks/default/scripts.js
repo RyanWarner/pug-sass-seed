@@ -6,22 +6,22 @@ var cache     = require( 'gulp-cached' );
 
 var eslint    = require( 'gulp-eslint' );
 
-var pathTo    = require( '../../config.js' );
+var path      = require( '../../paths.js' );
 
 
 // Scripts.
 
 gulp.task( 'eslint', function(  )
 {
-	return gulp.src( pathTo.scripts.all )
+	return gulp.src( path.to.scripts.source )
 		.pipe( eslint(  ) )
 		.pipe( eslint.format(  ) );
 } );
 
 gulp.task( 'scripts', [ 'eslint' ], function(  )
 {
-	return gulp.src( pathTo.scripts.all )
-		.pipe( gulp.dest( pathTo.scripts.destination ) )
+	return gulp.src( path.to.scripts.source )
+		.pipe( gulp.dest( path.to.scripts.destination ) )
 		.pipe( connect.reload(  ) );
 } );
 
