@@ -26,15 +26,3 @@ Work in progress!
 ## Coding Style
 
 [squint-style](https://github.com/RyanWarner/squint-style)
-
-
-
-
-Todo
-----
-
-- ~~Document and link to my coding style.~~
-- Concatenation / minification
-- ~~.scss linting~~
-- ~~.js linting~~
-- Try browsersync
