@@ -7,7 +7,7 @@ var cache       = require( 'gulp-cached' );
 
 var jade        = require( 'gulp-jade' );
 
-var config      = require( '../../../config.js' );
+var config    = require( '../../config.js' );
 
 // Jade.
 

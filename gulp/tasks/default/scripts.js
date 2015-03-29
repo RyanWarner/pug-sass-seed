@@ -1,12 +1,12 @@
-var gulp        = require( 'gulp' );
-var gutil       = require( 'gulp-util' );
+var gulp      = require( 'gulp' );
+var gutil     = require( 'gulp-util' );
 
-var connect     = require( 'gulp-connect' );
-var cache       = require( 'gulp-cached' );
+var connect   = require( 'gulp-connect' );
+var cache     = require( 'gulp-cached' );
 
-var eslint      = require( 'gulp-eslint' );
+var eslint    = require( 'gulp-eslint' );
 
-var pathTo      = require( '../../../config.js' );
+var pathTo    = require( '../../config.js' );
 
 
 // Scripts.

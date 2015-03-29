@@ -1,9 +1,7 @@
-// Assets.
-
 var gulp      = require( 'gulp' );
 var gutil     = require( 'gulp-util' );
 
-var config    = require( '../../../config.js' );
+var config    = require( '../../config.js' );
 
 var connect   = require( 'gulp-connect' );
 

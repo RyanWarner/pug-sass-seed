@@ -7,7 +7,6 @@ var config      = require( '../../config' );
 
 gulp.task( 'connect', function(  )
 {
-	console.log( config.destination );
 	connect.server(
 	{
 		root: config.destination,
