@@ -1,15 +1,15 @@
 var gulp    = require( 'gulp' );
-var gutil   = require( 'gulp-util' );
-
 var flatten = require( 'gulp-flatten' );
 var connect = require( 'gulp-connect' );
-
 var jade    = require( 'gulp-jade' );
 
 var path    = require( '../../paths.js' );
 var error   = require( '../../error-handler.js' );
 
-// Jade.
+
+
+// Compile Jade pages, flatten the path,
+// then put the files in the build folder.
 
 gulp.task( 'jade', function(  )
 {
