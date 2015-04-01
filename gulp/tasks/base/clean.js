@@ -1,8 +1,8 @@
-var gulp        = require( 'gulp' );
-var del         = require( 'del' );
-var cache       = require( 'gulp-cached' );
+var gulp   = require( 'gulp' );
+var del    = require( 'del' );
+var cache  = require( 'gulp-cached' );
 
-var config      = require( '../../config' );
+var path   = require( '../../paths.js' );
 
 
 
@@ -10,5 +10,5 @@ gulp.task( 'clean', function(  )
 {
 	cache.caches = {  };
 
-	del.sync( config.destination );
+	del.sync( path.to.destination );
 } );

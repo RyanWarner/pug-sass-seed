@@ -1,12 +1,12 @@
-var gulp        = require( 'gulp' );
-var config      = require( '../../config.js' );
+var gulp   = require( 'gulp' );
+var path   = require( '../../paths.js' );
 
 
 
 gulp.task( 'watch', function(  )
 {
-	gulp.watch( config.jade.all, [ 'jade' ] );
-	gulp.watch( config.sass.all, [ 'sass' ] );
-	gulp.watch( config.scripts.all, [ 'scripts' ] );
-	gulp.watch( config.images.all, [ 'images' ] );
+	gulp.watch( path.to.jade.source, [ 'jade' ] );
+	gulp.watch( path.to.sass.source, [ 'sass' ] );
+	gulp.watch( path.to.scripts.source, [ 'scripts' ] );
+	gulp.watch( path.to.images.source, [ 'images' ] );
 } );

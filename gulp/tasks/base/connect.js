@@ -1,7 +1,7 @@
-var gulp        = require( 'gulp' );
-var connect     = require( 'gulp-connect' );
+var gulp     = require( 'gulp' );
+var connect  = require( 'gulp-connect' );
 
-var config      = require( '../../config' );
+var path     = require( '../../paths.js' );
 
 
 
@@ -9,7 +9,7 @@ gulp.task( 'connect', function(  )
 {
 	connect.server(
 	{
-		root: config.destination,
+		root: path.to.destination,
 		hostname: '0.0.0.0',
 		livereload: true
 	} );
