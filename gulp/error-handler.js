@@ -1,8 +1,8 @@
 module.exports =
 {
-	handler: function(  )
+	handler: function( error )
 	{
-		console.log( 'Error: ' +  err );
+		console.log( 'Error: ' +  error );
 		gutil.beep(  );
 		this.emit( 'end' );
 	}
