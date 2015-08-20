@@ -15,14 +15,14 @@ var error     = require( '../../error-handler.js' );
 
 gulp.task( 'csscomb', function (  )
 {
-	return gulp.src( path.to.scss.source )
+	return gulp.src( path.to.sass.source )
 		.pipe( cache( 'csscomb' ) )
 		.pipe( csscomb(  ) )
-		.on( 'error', config.errorHandler )
-		.pipe( gulp.dest( root + '/site' ) );
+		.on( 'error', error.handler )
+		.pipe( gulp.dest( './site' ) );
 } );
 
-gulp.task( 'scss-lint', function(  )
+gulp.task( 'scss-lint', [ 'csscomb' ], function(  )
 {
 	return gulp.src( path.to.sass.source )
 		.pipe( scsslint( { 'config': 'scss-linting-config.yml' } ) )
