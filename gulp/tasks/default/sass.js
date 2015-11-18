@@ -16,7 +16,7 @@ var error     = require( '../../error-handler.js' );
 gulp.task( 'csscomb', function (  )
 {
 	return gulp.src( path.to.sass.source )
-		.pipe( cache( 'csscomb' ) )
+		//.pipe( cache( 'csscomb' ) )
 		.pipe( csscomb(  ) )
 		.on( 'error', error.handler )
 		.pipe( gulp.dest( './site' ) );
