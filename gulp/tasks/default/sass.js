@@ -2,6 +2,7 @@ var gulp      = require( 'gulp' );
 var gutil     = require( 'gulp-util' );
 var connect   = require( 'gulp-connect' );
 
+var cache     = require( 'gulp-cached' );
 var sass      = require( 'gulp-sass' );
 var prefix    = require( 'gulp-autoprefixer' );
 var scsslint  = require( 'gulp-scss-lint' );
@@ -16,7 +17,7 @@ var error     = require( '../../error-handler.js' );
 gulp.task( 'csscomb', function (  )
 {
 	return gulp.src( path.to.sass.source )
-		//.pipe( cache( 'csscomb' ) )
+		.pipe( cache( 'csscomb' ) )
 		.pipe( csscomb(  ) )
 		.on( 'error', error.handler )
 		.pipe( gulp.dest( './site' ) );
