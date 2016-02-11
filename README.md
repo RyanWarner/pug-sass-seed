@@ -1,4 +1,7 @@
-# jade-sass-seed ![Mineral](http://rywar.com/github-images/mineral.svg)
+[dev-status-img]: https://david-dm.org/RyanWarner/jade-sass-seed/dev-status.svg
+[dev-status-link]: https://david-dm.org/RyanWarner/jade-sass-seed#info=devDependencies
+
+# jade-sass-seed ![Mineral](http://warner.codes/github-images/mineral.svg)[![dev-status-img]][dev-status-link]
 
 Opinionated seed for simple websites that don't use a framework and use minimal JavaScript.
 
