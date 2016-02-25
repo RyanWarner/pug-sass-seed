@@ -20,10 +20,18 @@ Work in progress!
 
 ## Stack
 
-- [Jade](http://jade-lang.com/) as HTML preprocessor.
-- [Sass](http://sass-lang.com/) as CSS preprocessor.
-- [Gulp](http://gulpjs.com/) as streaming build system.
+- [Jade](http://jade-lang.com/) for HTML preprocessing.
+- [Sass](http://sass-lang.com/) for CSS preprocessing.
+- [Gulp](http://gulpjs.com/) for automated workflow.
 
+
+
+## Contributing
+
+- Open an issue to discuss or propose a change.
+- Fork the repository, and create an appropriately named branch.
+- Commit your changes.
+- Submite a pull request.
 
 
 ## Coding Style
