@@ -1,7 +1,7 @@
 {
   "name": "jade-sass-seed",
   "version": "0.1.0",
-  "description": "Starting point for Jade & SAss projects.",
+  "description": "Starting point for Jade & Sass projects.",
   "main": "gulpfile.js",
   "repository": {
     "type": "git",
