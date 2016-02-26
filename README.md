@@ -31,7 +31,7 @@ Work in progress!
 - Open an issue to discuss or propose a change.
 - Fork the repository, and create an appropriately named branch.
 - Commit your changes.
-- Submite a pull request.
+- Submit a pull request.
 
 
 ## Coding Style
