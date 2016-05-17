@@ -1,3 +1,5 @@
+'use strict';
+
 var gulp        = require( 'gulp' );
 var runSequence = require( 'run-sequence' );
 var requireDir  = require( 'require-dir' );
@@ -14,7 +16,7 @@ gulp.task( 'default', function(  )
 	runSequence(
 		'clean',
 		[
-			'jade', 
+			'jade',
 			'sass',
 			'scripts',
 			'images',
@@ -35,7 +37,9 @@ gulp.task( 'build', function(  )
 		[
 			'build-images',
 			'build-scripts',
-			'build-css'
+			'build-css',
+			'build-fonts',
+			'jade'
 		],
 		'build-html',
 		'connect'

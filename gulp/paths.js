@@ -5,7 +5,7 @@ var path = require( 'path' );
 var pathToThisFile = __dirname;
 var root = path.dirname( pathToThisFile );
 
-var destination = root + '/build/';
+var destination = root + '/dist/';
 
 module.exports =
 {
@@ -34,6 +34,11 @@ module.exports =
 		{
 			source: root + '/images/**/*.*',
 			destination: destination + 'images'
+		},
+		fonts:
+		{
+			source: '',
+			destination: destination + 'fonts'
 		},
 		favicon:
 		{
