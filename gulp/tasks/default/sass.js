@@ -26,7 +26,7 @@ gulp.task( 'csscomb', function (  )
 gulp.task( 'scss-lint', [ 'csscomb' ], function(  )
 {
 	return gulp.src( path.to.sass.source )
-		.pipe( scsslint( { 'config': 'scss-linting-config.yml' } ) )
+		.pipe( scsslint( { 'config': '.scss-lint.yml' } ) )
 		.on( 'error', error.handler );
 } );
 

@@ -19,6 +19,9 @@
   "homepage": "https://github.com/RyanWarner/jade-sass-seed",
   "devDependencies": {
     "del": "^2.1.0",
+    "eslint": "^2.13.1",
+    "eslint-config-warner": "^1.0.0",
+    "eslint-config-xo": "^0.15.2",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-cached": "^1.1.0",

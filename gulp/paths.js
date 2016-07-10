@@ -3,45 +3,36 @@
 var path = require( 'path' );
 
 var pathToThisFile = __dirname;
-var root = path.dirname( pathToThisFile );
-
+var root = path.dirname(pathToThisFile);
 var destination = root + '/dist/';
 
-module.exports =
-{
-	to:
-	{
+module.exports = {
+	to: {
 		destination: destination,
-		jade:
-		{
+		jade: {
 			source: root + '/site/**/*.jade',
 			pages: root + '/site/**/*.jade',
 			destination: destination
 		},
-		sass:
-		{
+		sass: {
 			source: root + '/site/**/*.scss',
 			main: root + '/site/main.scss',
 			destination: destination
 		},
-		scripts:
-		{
+		scripts: {
 			source: root + '/site/scripts/**/*.js',
 			main: root + '/site/scripts/main.js',
 			destination: destination + 'scripts'
 		},
-		images:
-		{
+		images: {
 			source: root + '/images/**/*.*',
 			destination: destination + 'images'
 		},
-		fonts:
-		{
+		fonts: {
 			source: '',
 			destination: destination + 'fonts'
 		},
-		favicon:
-		{
+		favicon: {
 			source: root + '/favicon.png',
 			destination: destination
 		}

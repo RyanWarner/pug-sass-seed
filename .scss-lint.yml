@@ -37,7 +37,7 @@ linters:
 
   HexLength:
     enabled: true
-    style: long # or 'short'
+    style: short # or 'short'
 
   HexNotation:
     enabled: true
@@ -75,7 +75,11 @@ linters:
 
   PropertySpelling:
     enabled: true
-    extra_properties: []
+    extra_properties:
+      - overflow-scrolling
+
+  QualifyingElement:
+    enabled: false
 
   SelectorDepth:
     enabled: true
@@ -111,7 +115,7 @@ linters:
 
   SpaceBetweenParens:
     enabled: true
-    spaces: 1
+    spaces: 0
 
   StringQuotes:
     enabled: true
