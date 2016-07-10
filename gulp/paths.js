@@ -1,6 +1,6 @@
 // File globs.
 
-var path = require( 'path' );
+var path = require('path');
 
 var pathToThisFile = __dirname;
 var root = path.dirname(pathToThisFile);

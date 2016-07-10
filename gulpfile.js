@@ -1,18 +1,17 @@
 'use strict';
 
-var gulp        = require( 'gulp' );
-var runSequence = require( 'run-sequence' );
-var requireDir  = require( 'require-dir' );
+var gulp        = require('gulp');
+var runSequence = require('run-sequence');
+var requireDir  = require('require-dir');
 
 
 
 // Require all tasks.
-requireDir( './gulp/tasks', { recurse: true } );
+requireDir('./gulp/tasks', { recurse: true });
 
 
 // Commonly used tasks defined here.
-gulp.task( 'default', function(  )
-{
+gulp.task('default', function() {
 	runSequence(
 		'clean',
 		[
@@ -25,13 +24,12 @@ gulp.task( 'default', function(  )
 		'watch',
 		'connect'
 	);
-} );
+});
 
 
 
 // Build task.
-gulp.task( 'build', function(  )
-{
+gulp.task('build', function() {
 	runSequence(
 		'clean',
 		[
@@ -44,4 +42,4 @@ gulp.task( 'build', function(  )
 		'build-html',
 		'connect'
 	);
-} );
+});

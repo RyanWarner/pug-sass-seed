@@ -1,27 +1,24 @@
 // Home
 
 body,
-html
-{
+html {
 	@extend %flex-center-all;
 
 	width: 100%;
 	height: 100%;
-	background-color: #ffffff;
+	background-color: #fff;
 }
 
-.page-title-and-image
-{
+.page-title-and-image {
 	flex-direction: row;
 	align-items: flex-end;
 
 	font-size: 28px;
 }
 
-.mineral
-{
+.mineral {
 	width: 80px;
 	height: 100px;
 	margin-left: 20px;
-	background-image: url( '../images/mineral.svg' );
+	background-image: url('../images/mineral.svg');
 }

@@ -1,7 +1,6 @@
 // Reset
 
-*
-{
+* {
 	flex-flow: column;
 	flex-shrink: 0;
 
@@ -12,20 +11,17 @@
 
 script,
 style,
-title
-{
+title {
 	display: none;
 }
 
 html,
-body
-{
+body {
 	margin: 0;
 	padding: 0;
 }
 
-ul
-{
+ul {
 	margin: 0;
 	padding: 0;
 
@@ -36,14 +32,12 @@ h1,
 h2,
 h3,
 h4,
-h5
-{
+h5 {
 	margin: 0;
 
 	font-weight: normal;
 }
 
-p
-{
+p {
 	margin: 0;
 }

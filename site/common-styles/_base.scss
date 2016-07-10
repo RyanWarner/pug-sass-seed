@@ -1,57 +1,47 @@
 // Global styles.
 
-::selection
-{
+::selection {
 	background-color: #f9ec67;
 }
 
-::placeholder
-{
+::placeholder {
 	color: #aea9a9;
 }
 
 body,
-html
-{
+html {
 	background-color: $white;
 
 	color: $black;
 	font-family: $helvetica;
 }
 
-h1
-{
+h1 {
 	font-size: 22px;
 	line-height: 32px;
 }
 
-p
-{
+p {
 	font-size: 16px;
 	line-height: 24px;
 }
 
-a
-{
+a {
 	color: #0f6ad4;
 
-	&:hover
-	{
+	&:hover {
 		color: #5da8ff;
 	}
 
-	&:active
-	{
+	&:active {
 		color: #0e62c2;
 	}
 
-	&:visited
-	{
+	&:visited {
 		color: #e79952;
 	}
 }
 
-input
-{
+input {
 	box-sizing: border-box;
 }

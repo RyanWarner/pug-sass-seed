@@ -1,20 +1,19 @@
-var gulp   = require( 'gulp' );
-var open   = require( 'gulp-open' );
+'use strict';
 
-var path   = require( '../../paths.js' );
+var gulp   = require('gulp');
+var open   = require('gulp-open');
+var path   = require('../../paths.js');
 
 
 
-gulp.task( 'open', function(  )
-{
-	var options = 
-	{
+gulp.task('open', function() {
+	var options = {
 		app: 'google chrome'
-		//app: 'safari'
+		// app: 'safari'
 	};
 
-	return gulp.src( path.to.destination + 'index.html' )
-		.pipe( open( 'http://localhost:8080', options ) );
-} );
+	return gulp.src(path.to.destination + 'index.html')
+		.pipe(open('http://localhost:8080', options));
+});
 
 

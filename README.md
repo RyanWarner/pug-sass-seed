@@ -36,4 +36,4 @@ Work in progress!
 
 ## Coding Style
 
-[squint-style](https://github.com/RyanWarner/squint-style)
+Slightly modified XO style.
