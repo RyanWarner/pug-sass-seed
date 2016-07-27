@@ -19,7 +19,7 @@
   "homepage": "https://github.com/RyanWarner/jade-sass-seed",
   "devDependencies": {
     "del": "^2.1.0",
-    "eslint": "^2.13.1",
+    "eslint": "^3.1.1",
     "eslint-config-warner": "^1.0.0",
     "eslint-config-xo": "^0.15.2",
     "gulp": "^3.9.0",
@@ -29,7 +29,7 @@
     "gulp-concat": "^2.6.0",
     "gulp-connect": "^4.0.0",
     "gulp-csscomb": "^3.0.6",
-    "gulp-eslint": "^2.0.0",
+    "gulp-eslint": "^3.0.1",
     "gulp-flatten": "^0.3.0",
     "gulp-fontmin": "^0.7.4",
     "gulp-imagemin": "^3.0.1",
