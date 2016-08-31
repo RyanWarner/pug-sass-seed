@@ -3,6 +3,7 @@
 var gulp      = require('gulp');
 var imagemin  = require('gulp-imagemin');
 var pngquant  = require('imagemin-pngquant');
+
 var path      = require('../../paths.js');
 
 

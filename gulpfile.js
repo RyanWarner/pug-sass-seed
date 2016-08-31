@@ -15,7 +15,7 @@ gulp.task('default', function() {
 	runSequence(
 		'clean',
 		[
-			'jade',
+			'pug',
 			'sass',
 			'scripts',
 			'images',
@@ -37,7 +37,7 @@ gulp.task('build', function() {
 			'build-scripts',
 			'build-css',
 			'build-fonts',
-			'jade'
+			'pug'
 		],
 		'build-html',
 		'connect'

@@ -1,6 +1,7 @@
+'use strict';
+
 var gulp      = require('gulp');
 var connect   = require('gulp-connect');
-
 var cache     = require('gulp-cached');
 var sass      = require('gulp-sass');
 var prefix    = require('gulp-autoprefixer');

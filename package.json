@@ -1,22 +1,25 @@
 {
-  "name": "jade-sass-seed",
-  "version": "0.1.0",
-  "description": "Starting point for Jade & Sass projects.",
+  "name": "pug-sass-seed",
+  "version": "1.0.0",
+  "description": "Starting point for Pug & Sass projects.",
   "main": "gulpfile.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RyanWarner/jade-sass-seed.git"
+    "url": "git+https://github.com/RyanWarner/pug-sass-seed.git"
   },
   "keywords": [
     "jade",
-    "sass"
+    "pug",
+    "sass",
+    "seed",
+    "boilerplate"
   ],
   "author": "Ryan Warner",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/RyanWarner/jade-sass-seed/issues"
+    "url": "https://github.com/RyanWarner/pug-sass-seed/issues"
   },
-  "homepage": "https://github.com/RyanWarner/jade-sass-seed",
+  "homepage": "https://github.com/RyanWarner/pug-sass-seed",
   "devDependencies": {
     "del": "^2.1.0",
     "eslint": "^3.1.1",

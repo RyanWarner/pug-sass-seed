@@ -1,5 +1,7 @@
 // File globs.
 
+'use strict';
+
 var path = require('path');
 
 var pathToThisFile = __dirname;
@@ -9,9 +11,9 @@ var destination = root + '/dist/';
 module.exports = {
 	to: {
 		destination: destination,
-		jade: {
-			source: root + '/site/**/*.jade',
-			pages: root + '/site/**/*.jade',
+		pug: {
+			source: root + '/site/**/*.pug',
+			pages: root + '/site/**/*.pug',
 			destination: destination
 		},
 		sass: {
