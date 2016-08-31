@@ -10,7 +10,7 @@ var error   = require('../../error-handler.js');
 
 
 
-// Compile Jade pages, flatten the path,
+// Compile Pug pages, flatten the path,
 // then put the files in the build folder.
 
 gulp.task('pug', function() {

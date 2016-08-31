@@ -37,7 +37,7 @@ linters:
 
   HexLength:
     enabled: true
-    style: short # or 'short'
+    style: short # or 'long'
 
   HexNotation:
     enabled: true

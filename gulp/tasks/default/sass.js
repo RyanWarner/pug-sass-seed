@@ -29,7 +29,6 @@ gulp.task('scss-lint', ['csscomb'], function() {
 
 gulp.task('sass', ['scss-lint'], function() {
 	return gulp.src(path.to.sass.main)
-		// .pipe( cache( 'sass' ) )
 		.pipe(sass())
 		.on('error', error.handler)
 		.pipe(prefix('last 2 versions', { cascade: true }))
