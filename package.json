@@ -39,7 +39,6 @@
     "gulp-minify-html": "^1.0.6",
     "gulp-open": "^2.0.0",
     "gulp-pug": "^3.0.4",
-    "gulp-run-sequence": "^0.3.2",
     "gulp-sass": "^2.1.0",
     "gulp-scss-lint": "^0.4.0",
     "gulp-uglify": "^2.0.0",
