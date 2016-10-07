@@ -11,6 +11,7 @@
     "jade",
     "pug",
     "sass",
+    "scss",
     "seed",
     "boilerplate"
   ],
