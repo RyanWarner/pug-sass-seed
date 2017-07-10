@@ -43,12 +43,12 @@
     "gulp-pug": "^3.0.4",
     "gulp-sass": "^2.3.2",
     "gulp-scss-lint": "^0.4.0",
-    "gulp-uglify": "^2.0.0",
+    "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.7",
     "imagemin-pngquant": "^5.0.0",
     "path": "^0.12.7",
     "require-dir": "^0.3.0",
-    "run-sequence": "^1.1.4"
+    "run-sequence": "^2.0.0"
   },
   "dependencies": {},
   "scripts": {
