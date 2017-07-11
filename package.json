@@ -38,17 +38,17 @@
     "gulp-flatten": "^0.3.0",
     "gulp-fontmin": "^0.7.4",
     "gulp-imagemin": "^3.0.1",
-    "gulp-minify-html": "^1.0.6",
+    "gulp-minify-html": "1.0.6",
     "gulp-open": "^2.0.0",
-    "gulp-pug": "^3.0.4",
+    "gulp-pug": "3.3.0",
     "gulp-sass": "^3.1.0",
-    "gulp-scss-lint": "^0.4.0",
-    "gulp-uglify": "^3.0.0",
-    "gulp-util": "^3.0.7",
+    "gulp-scss-lint": "0.4.0",
+    "gulp-uglify": "3.0.0",
+    "gulp-util": "3.0.8",
     "imagemin-pngquant": "^5.0.0",
     "path": "^0.12.7",
     "require-dir": "^0.3.0",
-    "run-sequence": "^2.0.0"
+    "run-sequence": "2.0.0"
   },
   "dependencies": {},
   "scripts": {
