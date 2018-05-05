@@ -47,7 +47,7 @@
     "gulp-util": "3.0.8",
     "imagemin-pngquant": "5.0.1",
     "path": "0.12.7",
-    "require-dir": "0.3.0",
+    "require-dir": "^1.0.0",
     "run-sequence": "2.0.0"
   },
   "dependencies": {},
